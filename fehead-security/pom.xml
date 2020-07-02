@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>needle</artifactId>
+    <groupId>com.fehead</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <packaging>jar</packaging>
+  <groupId>com.fehead.needle</groupId>
+  <artifactId>needle-security</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>needle-security</name>
+
+  <properties>
+    <fehead-common-version>1.0-SNAPSHOT</fehead-common-version>
+    <needle-dao-version>1.0-SNAPSHOT</needle-dao-version>
+    <nacos-version>0.2.2.RELEASE</nacos-version>
+    <needle-security-version>1.0-SNAPSHOT</needle-security-version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.fehead.open</groupId>
+      <artifactId>fehead-common</artifactId>
+      <version>${fehead-common-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+  </build>
+</project>

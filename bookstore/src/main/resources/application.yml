@@ -1,0 +1,8 @@
+server:
+  port: 8088
+spring:
+  profiles:
+    active: enc
+  devtools:
+    restart:
+      enabled: true
