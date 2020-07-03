@@ -1,4 +1,4 @@
-package com.fehead.needle.security.config;
+package com.fehead.bookstore.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,22 +15,6 @@ import org.springframework.web.filter.CorsFilter;
 @Configuration
 public class CORSConfiguration {
 
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurerAdapter() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                //addMapping 跨域所能访问的路径
-//                //allowedOrigins：那些域可以访问，默认为任何域都可以访问
-//                registry.addMapping("**")
-//                        .allowedOrigins("*")
-//                        .allowCredentials(true)
-//                        .allowedHeaders("*")
-//                        .allowedMethods("*")
-//                        .maxAge(18000L);
-//            }
-//        };
-//    }
 
     private CorsConfiguration buildConfig() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();

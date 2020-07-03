@@ -19,5 +19,6 @@ public class BookSimpleVO {
     private String bookAuthor;
     private String bookImg;
     private BigDecimal bookPrice;
-    private Integer bookSold;
+    private Integer bookRemain;
+
 }

@@ -3,6 +3,7 @@ package com.fehead.bookstore.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.fehead.bookstore.controller.vo.BookListVO;
 import com.fehead.bookstore.controller.vo.BookSimpleVO;
 import com.fehead.bookstore.dao.BookDO;
 import com.fehead.bookstore.dao.mapper.BookMapper;
@@ -25,7 +26,7 @@ public class BookServiceImpl implements BookService {
     private BookMapper bookMapper;
 
     @Override
-    public List<BookSimpleVO> getBooks(Pageable pageable) {
+    public BookListVO getBooks(Pageable pageable) {
 
         Page<BookDO> bookDOPage = new Page<>(pageable.getPageNumber(), pageable.getPageSize());
         QueryWrapper<BookDO> bookDOQueryWrapper = new QueryWrapper<>();
@@ -38,7 +39,7 @@ public class BookServiceImpl implements BookService {
         // 按时间逆序排序
         bookDOList.sort((m1, m2) -> m2.getBookUpTime().compareTo(m1.getBookUpTime()));
 
-        if (bookDOList == null) {
+        if (bookDOList.size() == 0) {
             return null;
         }
         List<BookSimpleVO> bookSimpleVOList = new ArrayList<>();
@@ -49,6 +50,12 @@ public class BookServiceImpl implements BookService {
             bookSimpleVOList.add(bookSimpleVO);
         });
 
-        return bookSimpleVOList;
+        BookListVO bookListVO = new BookListVO();
+        bookListVO.setList(bookSimpleVOList);
+        bookListVO.setCurrent(bookDOIPage.getCurrent());
+        double pages = bookDOIPage.getTotal()/bookDOIPage.getSize();
+        bookListVO.setPages((long) Math.ceil(pages));
+
+        return bookListVO;
     }
 }

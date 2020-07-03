@@ -10,7 +10,7 @@
 
     <modules>
         <module>fehead-common</module>
-        <module>fehead-security</module>
+<!--        <module>fehead-security</module>-->
         <module>bookstore</module>
     </modules>
     <packaging>pom</packaging>
@@ -24,7 +24,8 @@
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.16</druid.version>
         <lombok.version>1.16.18</lombok.version>
-        <needle-security-version>1.0-SNAPSHOT</needle-security-version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <fehead-security-version>1.0-SNAPSHOT</fehead-security-version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +56,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
