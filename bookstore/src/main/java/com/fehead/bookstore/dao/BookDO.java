@@ -31,6 +31,7 @@ public class BookDO {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date bookUpTime;
     private String bookPublisher;
+    private String bookType;
     private Integer bookSold;
     private Integer bookRemain;
     private String bookIntro;

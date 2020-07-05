@@ -33,11 +33,12 @@ public class AdminController extends BaseController {
                                        @RequestParam("book_img") String bookImg,
                                        @RequestParam("book_price")BigDecimal bookPrice,
                                        @RequestParam("book_publisher") String bookPublisher,
+                                       @RequestParam("book_type") String bookType,
                                        @RequestParam("book_sold") Integer bookSold,
                                        @RequestParam("book_remain") Integer bookRemain,
                                        @RequestParam("book_intro") String bookIntro) {
         Date bookUpTime = new Date();
-        BookDO bookDO = new BookDO(bookId, bookName, bookAuthor, bookImg, bookPrice, bookUpTime, bookPublisher, bookSold, bookRemain, bookIntro);
+        BookDO bookDO = new BookDO(bookId, bookName, bookAuthor, bookImg, bookPrice, bookUpTime, bookPublisher, bookType, bookSold, bookRemain, bookIntro);
         bookMapper.insert(bookDO);
 
         return CommonReturnType.create(null);

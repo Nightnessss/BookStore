@@ -1,5 +1,6 @@
 package com.fehead.bookstore.controller;
 
+import com.fehead.bookstore.controller.vo.BookDetailVO;
 import com.fehead.bookstore.controller.vo.BookListVO;
 import com.fehead.bookstore.controller.vo.BookSimpleVO;
 import com.fehead.bookstore.service.BookService;
@@ -8,6 +9,7 @@ import com.fehead.lang.response.CommonReturnType;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,10 +28,17 @@ public class BookController extends BaseController {
     private BookService bookService;
 
     @GetMapping("")
-    public CommonReturnType getBooks(@PageableDefault(size = 1,page = 1) Pageable pageable) {
+    public CommonReturnType getBooks(@PageableDefault(size = 6,page = 1) Pageable pageable) {
 
         BookListVO bookListVO = bookService.getBooks(pageable);
 
         return CommonReturnType.create(bookListVO);
+    }
+
+    @GetMapping("/{bookId}")
+    public CommonReturnType getBookDetail(@PathVariable("bookId") String bookId) {
+
+        BookDetailVO bookDetailVO = bookService.getDetail(bookId);
+        return CommonReturnType.create(bookDetailVO);
     }
 }
