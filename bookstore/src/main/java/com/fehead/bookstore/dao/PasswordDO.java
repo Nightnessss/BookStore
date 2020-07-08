@@ -3,26 +3,26 @@ package com.fehead.bookstore.dao;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fehead.bookstore.dao.mapper.PasswordMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.annotation.Resource;
-
 /**
- * @author Nightessss 2020/7/7 20:16
+ * @author Nightessss 2020/7/7 22:09
  */
-@TableName("user")
+@TableName("password")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDO {
+public class PasswordDO {
 
-
-
-    @TableId(type = IdType.INPUT)
+    @TableId(type = IdType.AUTO)
+    private Integer id;
     private String email;
-    private String nickname;
+    private String password;
 
+    public PasswordDO(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }
