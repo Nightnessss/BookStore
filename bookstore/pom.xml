@@ -16,11 +16,6 @@
             <artifactId>fehead-common</artifactId>
             <version>${project.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.fehead.open</groupId>-->
-<!--            <artifactId>fehead-security</artifactId>-->
-<!--            <version>${fehead-security-version}</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -78,6 +73,11 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -88,7 +88,7 @@
                 <configuration>
                     <fork>true</fork> <!-- 如果没有该配置，devtools不会生效 -->
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.fehead.</mainClass>
+                    <mainClass>com.fehead.bookstore</mainClass>
                     <!--                    <layout>ZIP</layout>-->
                 </configuration>
                 <executions>

@@ -12,8 +12,8 @@ body{ background:#fff;}
 .top_logo img{ width:auto; height:auto; display:inline; float:left;}
 .top_menu{ width:460px; height:auto; display:inline; float:left; margin-left:30px;}
 .top_menu ul{ width:100%; height:auto; display:inline; float:left;}
-.top_menu ul li{ padding:15px 5px 3px; margin-left:10px; float:left; background:#fff; border-bottom:1px solid #fff;}
-.top_menu ul li a{ font:13px/20px Arial, Helvetica, sans-serif; color:#333; text-decoration:none;}
+.top_menu ul li{ padding:15px 5px 3px; margin-left:10px; float:right; background:#fff; border-bottom:1px solid #fff;}
+.top_menu ul li a{ font:13px/20px Arial, Helvetica, sans-serif; color:#333; text-decoration: none;}
 .top_menu ul li:hover,.top_menu ul li.sel{ border-bottom:1px solid #bcb79c; background:#f6f5ea;}
 
 .top_shop_cur{ width:79px; height:50px; display:inline;position:absolute; top:30px; right:10px; z-index:100;}
@@ -22,18 +22,18 @@ body{ background:#fff;}
 .index_hr{ width:940px; border-bottom:5px solid #f2f1e2; float:left; margin-top:35px; margin-left:10px;}
 .content{ width:940px; height:auto; display:inline; float:left; overflow:hidden; margin-left:10px;}
 .h1_book_title{ width:940px; height:30px; margin:30px 0 10px 10px; font:15px/30px "微软雅黑"; color:#998a62;}
-.content ul{ width:940px; height:auto; float:left; overflow:hidden;}
-.content ul li{ width:300px; height:auto; display:inline; overflow:hidden; float:left; margin-right:10px; margin-bottom:30px;}
-.content ul li dd{ width:100px; height:154px; display:inline; float:left; margin-right:10px;}
-.content ul li dt{ width:190px; height:auto; display:inline; float:left;}
-.content ul li dt .book_title{ width:190px; font:16px/25px Arial; color:#eb4c89;}
-.content ul li dt .book_title a{ text-decoration:none; color:#eb4c89;}
-.content ul li dt .book_inline{ width:190px; font:12px/25px Arial; color:#998f77; margin-bottom:10px;}
+.content .books ul{ width:940px; height:auto; float:left; overflow:hidden;}
+.content .books ul li{ width:300px; height:auto; display:inline; overflow:hidden; float:left; margin-right:10px; margin-bottom:30px;}
+.content .books ul li dd{ width:100px; height:154px; display:inline; float:left; margin-right:10px;}
+.content .books ul li dt{ width:190px; height:auto; display:inline; float:left;}
+.content .books ul li dt .book_title{ width:190px; font:16px/25px Arial; color:#eb4c89;}
+.content .books ul li dt .book_title a{ text-decoration:none; color:#eb4c89;}
+.content .books ul li dt .book_inline{ width:190px; font:12px/25px Arial; color:#998f77; margin-bottom:10px;}
 /* .content ul li dt .book_buy{ border:1px solid #64991e; background:#7DB72F; background-image:linear-gradient(#7DB72F, #4E7D0E); padding:5px 8px; text-decoration:none; color:#fff;
  border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px;
  box-shadow:0 1px 2px rgba(0, 0, 0, 0.1); -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.1);-o-box-shadow:0 1px 2px rgba(0,0,0,0.1); display:inline; text-transform:uppercase; letter-spacing:0.1em;
 } */
-.content ul li dt .book_buy .buy_num{ border: 1px solid #999; border-radius: 10%; padding:1% 2%; font:14px/25px Arial;}
+.content .books ul li dt .book_buy .buy_num{ border: 1px solid #999; border-radius: 10%; padding:1% 2%; font:14px/25px Arial;}
 .content_press{ width:940px; height:auto; display:inline; float:left; margin-left:10px; margin-top:20px;}
 .content_press .press_porsen_01{ width:470px; height:auto; display:inline; float:left;}
 .content_press .press_porsen_01 h1{ width:470px; height:25px; font:14px/25px Arial, Helvetica, sans-serif; color:#997e11; text-transform:uppercase; font-weight:500;}
@@ -92,6 +92,7 @@ body{ background:#fff;}
     -webkit-tap-highlight-color: transparent;
   }
 
+/*弹出框*/
 .popup__container {
     max-width: 65%;
     padding: 1em;
@@ -153,4 +154,130 @@ body{ background:#fff;}
   font: 16px/24px Arial; 
   color:#999;
   margin: 2% 1% 2% 1%;
+}
+
+/*登录*/
+.form-horizontal {
+    background-color: #fff;
+    font-family: 'Arimo', sans-serif;
+    text-align: center;
+    padding: 50px 30px 50px;
+}
+
+.form-horizontal .heading {
+    color: #555;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0 0 50px 0;
+}
+
+
+.form-horizontal .form-group {
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.form-horizontal .form-group:nth-last-child(2) {
+    margin-bottom: 20px;
+}
+
+.form-horizontal .form-group:last-child {
+    margin: 0;
+}
+
+.form-horizontal .form-group > i {
+    color: #999;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 5px;
+    top: 50%;
+}
+
+.form-horizontal .form-control {
+    color: #7AB6B6;
+    background-color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    height: 40px;
+    padding: 5px 10px 2px 25px;
+    box-shadow: 0 0 0 0 transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    display: inline-block;
+}
+
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+.form-horizontal .form-control:focus {
+    border-bottom: 1px solid #7AB6B6;
+    box-shadow: none;
+}
+
+.form-horizontal .btn {
+    color: #7AB6B6;
+    background-color: #EDF6F5;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    width: 50%;
+    height: 45px;
+    padding: 7px 30px;
+    margin: 0 auto 25px;
+    border: none;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-horizontal .btn:focus,
+.form-horizontal .btn:hover {
+    color: #fff;
+    background-color: #7AB6B6;
+}
+
+.form-horizontal .btn:before,
+.form-horizontal .btn:after {
+    content: '';
+    background-color: #7AB6B6;
+    height: 50%;
+    width: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.form-horizontal .btn:after {
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+}
+
+.form-horizontal .btn:hover:before,
+.form-horizontal .btn:hover:after {
+    height: 100%;
+    width: 50%;
+    opacity: 0;
+}
+
+.form-horizontal .create_account {
+    color: #D6BC8B;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.form-horizontal .create_account:hover {
+    color: #7AB6B6;
+    text-decoration: none;
 }

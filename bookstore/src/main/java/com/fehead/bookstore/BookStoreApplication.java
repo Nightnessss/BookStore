@@ -11,6 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication
 @MapperScan("com.fehead.bookstore.dao.mapper")
+@ServletComponentScan
 @EnableSwagger2
 public class BookStoreApplication {
 

@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -39,6 +40,10 @@ public class BaseController {
             BusinessException businessException = (BusinessException) ex;
             responseData = packErrorCommonReturnType(businessException.getErrorCode()
                     , businessException.getErrorMsg());
+        } else if (ex instanceof DuplicateKeyException) {
+            logger.error(ex.getMessage());
+            responseData = packErrorCommonReturnType(EmBusinessError.PARAMETER_VALIDATION_ERROR.getErrorCode()
+                    , "该邮箱已被使用！");
         } else if (ex instanceof DataAccessException) { //数据库连接错误
             logger.error(ex.getMessage());
             responseData = packErrorCommonReturnType(EmBusinessError.DATARESOURCE_CONNECT_FAILURE.getErrorCode()

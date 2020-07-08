@@ -16,8 +16,7 @@ import java.io.IOException;
 /**
  * @author Nightnessss 2019/12/28 23:25
  */
-@Component
-@WebFilter(filterName = "JwtFilter", urlPatterns = {"/bookstore/**"})
+@WebFilter(filterName = "JwtFilter", urlPatterns = {"/bookstore/*"})
 public class JwtFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

@@ -21,7 +21,8 @@ public class OrderDO {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private Integer userId;
+    private String email;
     private String bookId;
+    private Integer num;
     private Integer status;
 }

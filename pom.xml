@@ -10,7 +10,6 @@
 
     <modules>
         <module>fehead-common</module>
-<!--        <module>fehead-security</module>-->
         <module>bookstore</module>
     </modules>
     <packaging>pom</packaging>

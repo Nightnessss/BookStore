@@ -1,31 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>WeirBook</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" href="css/demo.css" />
-<link type="text/css" rel="stylesheet" href="css/linkstyles.css" />
-<link type="text/css" rel="stylesheet" href="css/reset.css" />
-<link type="text/css" rel="stylesheet" href="css/base.css" />
-<link type="text/css" rel="stylesheet" media="screen and (min-width:861px) and (max-width:960px)" href="css/pad_heng.css" />
-<link type="text/css" rel="stylesheet" media="screen and (min-width:601px) and (max-width:860px)" href="css/pad.css" />
-<link type="text/css" rel="stylesheet" media="screen and (min-width:481px) and (max-width:600px)" href="css/tel_heng.css" />
-<link type="text/css" rel="stylesheet" media="screen and (max-width:480px)" href="css/tel.css" />
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/jquery.animate_from_to-1.0.min.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>WeirBook</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link type="text/css" rel="stylesheet" href="css/linkstyles.css"/>
+    <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="css/base.css"/>
+    <link type="text/css" rel="stylesheet" media="screen and (min-width:861px) and (max-width:960px)"
+          href="css/pad_heng.css"/>
+    <link type="text/css" rel="stylesheet" media="screen and (min-width:601px) and (max-width:860px)"
+          href="css/pad.css"/>
+    <link type="text/css" rel="stylesheet" media="screen and (min-width:481px) and (max-width:600px)"
+          href="css/tel_heng.css"/>
+    <link type="text/css" rel="stylesheet" media="screen and (max-width:480px)" href="css/tel.css"/>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquerysession.js"></script>
+    <script src="js/jquery.animate_from_to-1.0.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
 
-<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-<link href="css/animate.css" rel="stylesheet"/>
-<link rel="stylesheet" href="css/vintage-popup.min.css">
-<link rel="stylesheet" href="css/popup-material-theme.min.css">
-<link rel="stylesheet" type="text/css" href="css/checkout-cornerflat.css" />
-<link rel="stylesheet" href="css/BeAlert.css">
-<link rel="stylesheet" href="css/Pagination.css">
-<script src="js/BeAlert.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/vintage-popup.min.css">
+    <link rel="stylesheet" href="css/popup-material-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/checkout-cornerflat.css"/>
+    <link rel="stylesheet" href="css/BeAlert.css">
+    <link rel="stylesheet" href="css/Pagination.css">
+    <script src="js/BeAlert.js"></script>
+    <style>
+
+
+    </style>
 </head>
 
 <body>
@@ -36,25 +45,36 @@
 </div> -->
 
 <div class="w_100_l">
-	<div class="main">
+    <div class="main">
         <div class="top_banner">
-            
-            <div class="top_logo grid__item"><a class="link link--ilin" href="#"><span>Weir</span><span>Book</span></a></div>
+
+            <div class="top_logo grid__item"><a class="link link--ilin" href="#"><span>Weir</span><span>Book</span></a>
+            </div>
             <div class="top_menu">
-            	<ul>
-                	<li class="sel"><a href="#">HOME</a></li>
-                	<li><a href="#">STORE</a></li>
-                	<li><a href="#">PRESS</a></li>
-                	<li><a href="#">ABOUT</a></li>
-                	<li><a href="#">HELP</a></li>
+                <ul>
+                    <!--                	<li class="sel"><a href="#">HOME</a></li>-->
+                    <!--                	<li><a href="#">STORE</a></li>-->
+                    <!--                	<li><a href="#">PRESS</a></li>-->
+                    <!--                	<li><a href="#">ABOUT</a></li>-->
+                    <!--                	<li><a href="#">HELP</a></li>-->
+                    <li>
+                        <div class="user" style="display: none;">
+                            Welcome！<span class="user_nickname"></span>
+                        </div>
+                        <div class="popupLogin" data-popup-target="loginPopup">
+                            登录
+                        </div>
+                    </li>
                 </ul>
+
             </div>
             <!-- <div class="top_shop_cur"><a href="#"><img src="images/top_shop_cur.jpg" alt="shopping car" /></a></div> -->
             <div class="checkout">
                 <a class="checkout__button" href="#"><!-- Fallback location -->
                     <span class="checkout__text">
                         <svg class="checkout__icon" width="30px" height="30px" viewBox="0 0 35 35">
-                            <path fill="#fff" d="M33.623,8.004c-0.185-0.268-0.486-0.434-0.812-0.447L12.573,6.685c-0.581-0.025-1.066,0.423-1.091,1.001 c-0.025,0.578,0.423,1.065,1.001,1.091L31.35,9.589l-3.709,11.575H11.131L8.149,4.924c-0.065-0.355-0.31-0.652-0.646-0.785 L2.618,2.22C2.079,2.01,1.472,2.274,1.26,2.812s0.053,1.146 0.591,1.357l4.343,1.706L9.23,22.4c0.092,0.497,0.524,0.857,1.03,0.857 h0.504l-1.15,3.193c-0.096,0.268-0.057,0.565,0.108,0.798c0.163,0.232,0.429,0.37,0.713,0.37h0.807 c-0.5,0.556-0.807,1.288-0.807,2.093c0,1.732,1.409,3.141,3.14,3.141c1.732,0,3.141-1.408,3.141-3.141c0-0.805-0.307-1.537-0.807-2.093h6.847c-0.5,0.556-0.806,1.288-0.806,2.093c0,1.732,1.407,3.141,3.14,3.141 c1.731,0,3.14-1.408,3.14-3.141c0-0.805-0.307-1.537-0.806-2.093h0.98c0.482,0,0.872-0.391,0.872-0.872s-0.39-0.873-0.872-0.873 H11.675l0.942-2.617h15.786c0.455,0,0.857-0.294,0.996-0.727l4.362-13.608C33.862,8.612,33.811,8.272,33.623,8.004z M13.574,31.108c-0.769,0-1.395-0.626-1.395-1.396s0.626-1.396,1.395-1.396c0.77,0,1.396,0.626,1.396,1.396S14.344,31.108,13.574,31.108z M25.089,31.108c-0.771,0-1.396 0.626-1.396-1.396s0.626-1.396,1.396-1.396c0.77,0,1.396,0.626,1.396,1.396 S25.858,31.108,25.089,31.108z"/>
+                            <path fill="#fff"
+                                  d="M33.623,8.004c-0.185-0.268-0.486-0.434-0.812-0.447L12.573,6.685c-0.581-0.025-1.066,0.423-1.091,1.001 c-0.025,0.578,0.423,1.065,1.001,1.091L31.35,9.589l-3.709,11.575H11.131L8.149,4.924c-0.065-0.355-0.31-0.652-0.646-0.785 L2.618,2.22C2.079,2.01,1.472,2.274,1.26,2.812s0.053,1.146 0.591,1.357l4.343,1.706L9.23,22.4c0.092,0.497,0.524,0.857,1.03,0.857 h0.504l-1.15,3.193c-0.096,0.268-0.057,0.565,0.108,0.798c0.163,0.232,0.429,0.37,0.713,0.37h0.807 c-0.5,0.556-0.807,1.288-0.807,2.093c0,1.732,1.409,3.141,3.14,3.141c1.732,0,3.141-1.408,3.141-3.141c0-0.805-0.307-1.537-0.807-2.093h6.847c-0.5,0.556-0.806,1.288-0.806,2.093c0,1.732,1.407,3.141,3.14,3.141 c1.731,0,3.14-1.408,3.14-3.141c0-0.805-0.307-1.537-0.806-2.093h0.98c0.482,0,0.872-0.391,0.872-0.872s-0.39-0.873-0.872-0.873 H11.675l0.942-2.617h15.786c0.455,0,0.857-0.294,0.996-0.727l4.362-13.608C33.862,8.612,33.811,8.272,33.623,8.004z M13.574,31.108c-0.769,0-1.395-0.626-1.395-1.396s0.626-1.396,1.395-1.396c0.77,0,1.396,0.626,1.396,1.396S14.344,31.108,13.574,31.108z M25.089,31.108c-0.771,0-1.396 0.626-1.396-1.396s0.626-1.396,1.396-1.396c0.77,0,1.396,0.626,1.396,1.396 S25.858,31.108,25.089,31.108z"/>
                         </svg>
                     </span>
                 </a>
@@ -62,34 +82,47 @@
                     <div class="checkout__order-inner">
                         <table class="checkout__summary">
                             <thead>
-                                <tr><th></th><th>购物车</th><th>单价</th><th></th></tr>
+                            <tr>
+                                <th></th>
+                                <th>购物车</th>
+                                <th>单价</th>
+                                <th></th>
+                            </tr>
                             </thead>
                             <tfoot>
-                                <tr><th></th><th colspan="2">合计 <span class="rmb"><i class="fa fa-rmb"></i> </span><span class="checkout__total">0.00</span></th></tr>
+                            <tr>
+                                <th></th>
+                                <th colspan="2">合计 <span class="rmb"><i class="fa fa-rmb"></i> </span><span
+                                        class="checkout__total">0.00</span></th>
+                            </tr>
                             </tfoot>
                             <tbody>
-                                <!-- <tr>
-                                    <td><span class="delete"><i class="fa fa-trash-o fa-fw"></i> </span></td>
-                                    <td><span class="goods_name">什么是民粹主义？</span><span class="muti"><i class="fa fa-close fa-fw"></i> </span><span class="goods_num">1</span></td>
-                                    <td><i class="fa fa-rmb"></i> <span class="goods_price">9.90</span></td>
-                                    <td><span class="cut"> <i class="fa fa-minus-square-o"></i></span> <span class="add"><i class="fa fa-plus-square-o"></i></span></td>
-                                </tr> -->
-                                
-                                <!-- <tr><td><span class="goods_name">geir</span></td><td>$5.50</td></tr> -->
-                                <!-- <tr><td><span class="goods_name">Audioslave</span></td><td>$11.00</td></tr>
-                                <tr><td><span class="goods_name">Frank Sinatra</span></td><td>$19.90</td></tr>
-                                <tr><td><span class="goods_name">Morphine</span></td><td>$9.90</td></tr> -->
+                            <!-- <tr>
+                                <td><span class="delete"><i class="fa fa-trash-o fa-fw"></i> </span></td>
+                                <td><span class="goods_name">什么是民粹主义？</span><span class="muti"><i class="fa fa-close fa-fw"></i> </span><span class="goods_num">1</span></td>
+                                <td><i class="fa fa-rmb"></i> <span class="goods_price">9.90</span></td>
+                                <td><span class="cut"> <i class="fa fa-minus-square-o"></i></span> <span class="add"><i class="fa fa-plus-square-o"></i></span></td>
+                            </tr> -->
+
+                            <!-- <tr><td><span class="goods_name">geir</span></td><td>$5.50</td></tr> -->
+                            <!-- <tr><td><span class="goods_name">Audioslave</span></td><td>$11.00</td></tr>
+                            <tr><td><span class="goods_name">Frank Sinatra</span></td><td>$19.90</td></tr>
+                            <tr><td><span class="goods_name">Morphine</span></td><td>$9.90</td></tr> -->
                             </tbody>
                         </table><!-- /checkout__summary -->
-                        <button class="checkout__option checkout__option--silent checkout__cancel"><i class="fa fa-angle-left"></i> Continue Shopping</button><button class="checkout__option">Buy</button>
-                        <button class="checkout__close checkout__cancel"><i class="icon fa fa-fw fa-close"></i>Close</button>
+                        <button class="checkout__option checkout__option--silent checkout__cancel"><i
+                                class="fa fa-angle-left"></i> Continue Shopping
+                        </button>
+                        <button class="checkout__option">Buy</button>
+                        <button class="checkout__close checkout__cancel"><i class="icon fa fa-fw fa-close"></i>Close
+                        </button>
                     </div><!-- /checkout__order-inner -->
                 </div><!-- /checkout__order -->
             </div><!-- /checkout -->
         </div>
-        <span class="index_img"><img src="images/banner_img.jpg" alt="Dan Cederholm" border="0" usemap="#Map" />
+        <span class="index_img"><img src="images/banner_img.jpg" alt="Dan Cederholm" border="0" usemap="#Map"/>
         <map name="Map" id="Map">
-          <area shape="rect" coords="857,230,930,269" href="#" alt="buy now" />
+          <area shape="rect" coords="857,230,930,269" href="#" alt="buy now"/>
         </map>
         </span>
 
@@ -97,56 +130,83 @@
         <div class="content">
             <h1 class="h1_book_title">Also from A Book Apart</h1>
 
-            <div class="popup" tabindex="-1" role="dialog" data-popup-id="demoPopup">
-                    <div class="popup__container">
-                        <div class="popup__close"><span></span><span></span></div>
-                        <div class="popup__content">
+            <div class="popup pop_books" tabindex="-1" role="dialog" data-popup-id="demoPopup">
+                <div class="popup__container">
+                    <div class="popup__close"><span></span><span></span></div>
+                    <div class="popup__content">
                         <div class="pop_top">
-                            <div class="pop_left">
-                                <img class="pop_img" src="images/0.png" alt="book" />
+                            <!--                            <div class="pop_left">-->
+                            <!--                                <img class="pop_img" src="images/0.png" alt="book" />-->
+                            <!--                            </div>-->
+                            <!--                            <div class="pop_right">-->
+                            <!--                                <input id="book_id" type="hidden" value="9787221153159"/>'-->
+                            <!--                                <p class="pop_title" style="font-size: 24px;color:red">82年生的金智英</p>-->
+                            <!--                                <p class="pop_inline">by <span class="author">[韩]赵南柱</span></p>-->
+                            <!--                                <p class="pop_inline">售价： <span class="author">45</span></p>-->
+                            <!--                                <p class="pop_inline">出版社： <span class="author">贵州人民出版社</span></p>-->
+                            <!--                                <p class="pop_inline">类型： <span class="author">社会</span></p>-->
+                            <!--                                <p class="pop_inline">销量： <span class="author">5</span></p>-->
+                            <!--                                <p class="pop_inline">库存： <span class="author">15</span></p>-->
+                            <!--                            </div>-->
+                            <!--                                -->
+                            <!--                            </div>-->
+                            <!--                            <div class="pop_bottom">-->
+                            <!--                                <p class="pop_inline">内容简介：</p>-->
+                            <!--                                <p class="pop_content">-->
+                            <!--                                    表面看来，金智英（郑有美 饰）是一个生活在幸福之中的家庭主妇，有一个收入不菲又温柔体贴的丈夫郑大贤（孔侑 饰）和一个非常可爱的女儿，在波澜不惊的日子里享受着每一天的平淡和安稳。-->
+                            <!--                                    实际上，金智英的内心早就如同地震一般的产生了天崩地裂的动摇，在她的身上背负着无比沉重的枷锁。婆婆面前，她要扮演逆来顺受的好儿媳。丈夫面前，她又是无条件支持他的贤妻。面对女儿，金智英必须隐藏起脆弱，做她无坚不摧的母亲。那么，真正的金智英究竟在哪儿呢？长久的压抑和挣扎中，金智英患上了心理疾病，郑大贤决定和妻子一起接受心理咨询，共同面对命运设置给他们的难题。-->
+                            <!--                                </p>-->
+                            <!--                                <p class="pop_inline"></p>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup pop_login" tabindex="-1" role="dialog" data-popup-id="loginPopup">
+                <div class="popup__container">
+                    <div class="popup__close"><span></span><span></span></div>
+                    <div class="popup__content">
+                        <div class="form-horizontal">
+                            <div class="heading">登  录</div>
+                            <div class="form-group">
+                                <i class="fa fa-user"></i><input required name="login[email]" type="email"
+                                                                 class="form-control" placeholder="Username"
+                                                                 id="email">
                             </div>
-                            <div class="pop_right">
-                                <input id="book_id" type="hidden" value="9787221153159"/>'
-                                <p class="pop_title" style="font-size: 24px;color:red">82年生的金智英</p>
-                                <p class="pop_inline">by <span class="author">[韩]赵南柱</span></p>
-                                <p class="pop_inline">售价： <span class="author">45</span></p>
-                                <p class="pop_inline">出版社： <span class="author">贵州人民出版社</span></p>
-                                <p class="pop_inline">类型： <span class="author">社会</span></p>
-                                <p class="pop_inline">销量： <span class="author">5</span></p>
-                                <p class="pop_inline">库存： <span class="author">15</span></p>
+                            <div class="form-group">
+                                <i class="fa fa-lock"></i><input required name="login[password]" type="password"
+                                                                 class="form-control" placeholder="Password"
+                                                                 id="password"/>
                             </div>
-                                
-                            </div>
-                            <div class="pop_bottom">
-                                <p class="pop_inline">内容简介：</p>
-                                <p class="pop_content">
-                                    表面看来，金智英（郑有美 饰）是一个生活在幸福之中的家庭主妇，有一个收入不菲又温柔体贴的丈夫郑大贤（孔侑 饰）和一个非常可爱的女儿，在波澜不惊的日子里享受着每一天的平淡和安稳。
-                                    实际上，金智英的内心早就如同地震一般的产生了天崩地裂的动摇，在她的身上背负着无比沉重的枷锁。婆婆面前，她要扮演逆来顺受的好儿媳。丈夫面前，她又是无条件支持他的贤妻。面对女儿，金智英必须隐藏起脆弱，做她无坚不摧的母亲。那么，真正的金智英究竟在哪儿呢？长久的压抑和挣扎中，金智英患上了心理疾病，郑大贤决定和妻子一起接受心理咨询，共同面对命运设置给他们的难题。
-                                </p>
-                                <p class="pop_inline"></p>
+                            <div class="form-group">
+                                <button class="btn btn-default submit"><i class="fa fa-arrow-right"></i></button>
+                                <span>没有账号? <a class="create_account">注  册</a></span>
                             </div>
                         </div>
                     </div>
                 </div>
-        	<ul>
-            	<!-- <li>
-                	<dl>
-                    	<dd><a href="#"><img class="book_img" src="images/0.png" alt="book" /></a></dd>
-                        <dt>
-                        	<p class="book_title"><a href="#" target="_blank">Just Enough Research</a></p>
-                            <p class="book_inline">by <span class="author">Erika Hall</span></p>
-                            <p class="book_inline">
-                                销量: <span class="sold_out">233</span><br>
-                                售价: <i class="fa fa-rmb"></i><span class="price">233</span></p>
-                            <p class="book_inline"></p>
-                            <div class="book_buy">
-                                <button type="button" class="default" onmousedown="ripplet(event)">加入购物车</button>
-                            </div>
-                        </dt>
-                    </dl>
-                </li> -->
-            </ul>
-            
+            </div>
+            <div class="books">
+                <ul>
+                    <!-- <li>
+                        <dl>
+                            <dd><a href="#"><img class="book_img" src="images/0.png" alt="book" /></a></dd>
+                            <dt>
+                                <p class="book_title"><a href="#" target="_blank">Just Enough Research</a></p>
+                                <p class="book_inline">by <span class="author">Erika Hall</span></p>
+                                <p class="book_inline">
+                                    销量: <span class="sold_out">233</span><br>
+                                    售价: <i class="fa fa-rmb"></i><span class="price">233</span></p>
+                                <p class="book_inline"></p>
+                                <div class="book_buy">
+                                    <button type="button" class="default" onmousedown="ripplet(event)">加入购物车</button>
+                                </div>
+                            </dt>
+                        </dl>
+                    </li> -->
+                </ul>
+            </div>
+
         </div>
 
         <nav class="pagination-outer" aria-label="Page navigation">
@@ -170,7 +230,7 @@
         </nav>
         <p class="index_hr" style="margin-top:20px;"></p>
         <div class="footer">
-           <span class="span_1">&copy; Copyright 2014, A Book Apart, LLC</span>&nbsp;&nbsp;
+            <span class="span_1">&copy; Copyright 2014, A Book Apart, LLC</span>&nbsp;&nbsp;
             <a href="#">Help & Contact us</a>
             <a class="a1" href="#">Press Room RSS feed</a>
             <a class="a2" href="#">abookapart on Twitter</a>
