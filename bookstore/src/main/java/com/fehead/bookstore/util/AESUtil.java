@@ -29,7 +29,7 @@ import java.security.NoSuchAlgorithmException;
  * @author Nightnessss 2019/12/29 0:46
  */
 
-    public class AESUtil {
+public class AESUtil {
         private static final String defaultCharset = "UTF-8";
         private static final String KEY_AES = "AES";
         private static final String KEY_MD5 = "MD5";

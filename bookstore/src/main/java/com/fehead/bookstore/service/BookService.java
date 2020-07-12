@@ -16,7 +16,7 @@ public interface BookService {
      * @param pageable 分页
      * @return BookListVO
      */
-    public BookListVO getBooks(Pageable pageable);
+    public BookListVO getBooks(Pageable pageable, String search);
 
     public BookDetailVO getDetail(String bookId);
 }

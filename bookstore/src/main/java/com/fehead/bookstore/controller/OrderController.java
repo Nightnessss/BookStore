@@ -1,5 +1,6 @@
 package com.fehead.bookstore.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.fehead.bookstore.service.OrderService;
 import com.fehead.bookstore.service.UserService;
 import com.fehead.bookstore.service.model.Goods;
@@ -15,12 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * @author Nightessss 2020/7/8 22:12
  */
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/bookstore/order")
 public class OrderController extends BaseController {
 
     @Resource
@@ -31,11 +33,12 @@ public class OrderController extends BaseController {
     @PostMapping("/order")
     public CommonReturnType order(HttpServletRequest request,
                                   HttpServletResponse response,
-                                  @RequestParam("list") Goods[] list) {
+                                  @RequestParam("goods") String goodsStr) throws BusinessException {
         String authHeader = request.getHeader("authorization");
         String username = userService.getUser(authHeader);
-        for (Goods o:list) {
-            orderService.submit(o.getGoodId(), o.getGoodNum(), username);
+        List<Goods> list = JSON.parseArray(goodsStr, Goods.class);
+        for (Goods good : list) {
+            orderService.submit(good.getGoodId(), good.getGoodNum(), username);
         }
         return CommonReturnType.create(null);
     }

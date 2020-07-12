@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author Nightessss 2020/7/7 20:16
  */
-@TableName("order")
+@TableName("order_info")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,9 +20,16 @@ public class OrderDO {
     public static final int UNDONE = 0;
 
     @TableId(type = IdType.AUTO)
-    private Integer id;
-    private String email;
+    private Integer orderId;
+    private String userEmail;
     private String bookId;
-    private Integer num;
-    private Integer status;
+    private Integer bookNum;
+    private Integer orderStatus;
+
+    public OrderDO(String userEmail, String bookId, Integer bookNum, Integer orderStatus) {
+        this.userEmail = userEmail;
+        this.bookId = bookId;
+        this.bookNum = bookNum;
+        this.orderStatus = orderStatus;
+    }
 }

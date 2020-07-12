@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Goods {
 
-    private Integer goodId;
+    private String goodId;
     private Integer goodNum;
 }

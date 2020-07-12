@@ -1,15 +1,17 @@
 $(function() {
-    var LOGIN_URL = "http://localhost:8088/login"
+    var LOGIN_URL = "http://localhost:8088/login";
     var BASE_URL = "http://localhost:8088/bookstore";
     var userToken = $.session.get('token');
     login();
     fly();
-    init(1);
+    search();
+    init(1, null);
+    order();
 
     /**
      * 初次加载
      */
-    function init(pageNumber) {
+    function init(pageNumber, search) {
         $.ajax({
             url: BASE_URL + "/book",
             type: "GET",
@@ -18,7 +20,8 @@ $(function() {
                 "authorization": userToken
             },
             data: {
-                "page": pageNumber
+                "page": pageNumber,
+                "search": search
             },
             success: function(res) {
                 console.log(res);
@@ -28,7 +31,6 @@ $(function() {
                     detail();
                 } else {
                     alert(res.data.errorMsg, null, function () {
-                        $('#login').modal();
                     }, {type: 'error', confirmButtonText: 'OK'});
                 }
             }
@@ -40,6 +42,7 @@ $(function() {
 
     function addBook(data) {
         $('.content .books ul').html("");
+        if (data == null) return;
         for(let i = data.list.length -1; i >= 0 ; i--) {
             $('.content .books ul').prepend('<li><dl>' +
                                         '<dd class="popupTrigger" data-popup-target="demoPopup"><input class="book_id" type="hidden" value="' + data.list[i].bookId +'"/><a>' +
@@ -157,8 +160,12 @@ $(function() {
     function pagination(data) {
         
         $(".pagination-outer>ul").html('<li class="page-item pre"><a class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>');
-        if (data.pages <= 5) {
-            for (let i = 1; i <= data.pages; i++) {
+        var pages = 1;
+        if (data != null) {
+            pages = data.pages;
+        }
+        if (pages <= 5) {
+            for (let i = 1; i <= pages; i++) {
                 $(".pagination-outer>ul").append('<li class="page-item num"><a class="page-link">' + i + '</a></li>')
             }
         } else {
@@ -168,8 +175,8 @@ $(function() {
                 begin = 1;
                 end = begin + 4;
             }
-            if (end > data.pages) {
-                end = data.pages;
+            if (end > pages) {
+                end = pages;
                 begin = end - 4;
             }
             for (let i = begin; i <= end; i++) {
@@ -366,7 +373,6 @@ $(function() {
                         }, {type: 'success', confirmButtonText: 'OK'});
                     } else {
                         alert(res.data.errorMsg, null, function () {
-                            $('#login').modal();
                         }, {type: 'error', confirmButtonText: 'OK'});
                     }
                 }
@@ -381,16 +387,18 @@ $(function() {
     
     function order() {
         $(".checkout .checkout__order .checkout__option").click(function () {
+            console.log("-----------");
             var goods = new Array();
-            var summary = $(this).parent();
-            $(summary + " tbody tr").each(function() {
+            $(".checkout .checkout__order tbody tr").each(function() {
                 let id = $(this).find(".book_id").val();
                 let num = $(this).find(".goods_num").text();
                 let obj = new Object();
                 obj.goodId = id;
                 obj.goodNum = num;
-                goods.add(obj);
+                goods.push(obj);
             });
+            var goods_str = JSON.stringify(goods);
+            console.log(goods_str);
             $.ajax({
                 url: BASE_URL + "/order/order",
                 type: "POST",
@@ -399,14 +407,25 @@ $(function() {
                     "authorization": userToken
                 },
                 data: {
-                    "list": goods
+                    "goods": goods_str
                 },
                 success: function (res) {
+                    console.log(res);
                     if (res.status == "success") {
-
+                        alert("购买成功", null, function () {
+                            window.location.reload();
+                        }, {type: 'success', confirmButtonText: 'OK'});
                     }
                 }
             })
+        })
+    }
+
+    function search() {
+        $(".search .search_btn").click(function () {
+            console.log("search");
+            var search = $(this).parent().parent().find(".form-control").val();
+            init(1, search);
         })
     }
     

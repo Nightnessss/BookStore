@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fehead.lang.error.BusinessException;
+import com.fehead.lang.error.EmBusinessError;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,4 +37,17 @@ public class BookDO {
     private Integer bookSold;
     private Integer bookRemain;
     private String bookIntro;
+
+    public BookDO(Integer bookSold, Integer bookRemain) {
+        this.bookSold = bookSold;
+        this.bookRemain = bookRemain;
+    }
+
+    public void sold(int num) throws BusinessException {
+        this.bookSold += num;
+        this.bookRemain -= num;
+        if (this.bookRemain < 0) {
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, this.bookName + "库存不足");
+        }
+    }
 }

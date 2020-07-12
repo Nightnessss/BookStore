@@ -27,13 +27,14 @@ public class BookServiceImpl implements BookService {
     private BookMapper bookMapper;
 
     @Override
-    public BookListVO getBooks(Pageable pageable) {
+    public BookListVO getBooks(Pageable pageable, String search) {
 
         Page<BookDO> bookDOPage = new Page<>(pageable.getPageNumber(), pageable.getPageSize());
         QueryWrapper<BookDO> bookDOQueryWrapper = new QueryWrapper<>();
 
         // 查找剩余数量大于0的书籍
-        bookDOQueryWrapper.gt("book_remain", 0);
+        bookDOQueryWrapper.gt("book_remain", 0)
+                        .like("book_name", search);
         IPage<BookDO> bookDOIPage = bookMapper.selectPage(bookDOPage, bookDOQueryWrapper);
         List<BookDO> bookDOList = bookDOIPage.getRecords();
 

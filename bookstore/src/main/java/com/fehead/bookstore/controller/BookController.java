@@ -8,10 +8,7 @@ import com.fehead.lang.controller.BaseController;
 import com.fehead.lang.response.CommonReturnType;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,9 +25,10 @@ public class BookController extends BaseController {
     private BookService bookService;
 
     @GetMapping("")
-    public CommonReturnType getBooks(@PageableDefault(size = 6,page = 1) Pageable pageable) {
+    public CommonReturnType getBooks(@PageableDefault(size = 6,page = 1) Pageable pageable,
+                                     @RequestParam(value = "search", defaultValue = "") String search) {
 
-        BookListVO bookListVO = bookService.getBooks(pageable);
+        BookListVO bookListVO = bookService.getBooks(pageable, search);
 
         return CommonReturnType.create(bookListVO);
     }
