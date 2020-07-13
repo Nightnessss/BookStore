@@ -415,7 +415,16 @@ $(function() {
                         alert("购买成功", null, function () {
                             window.location.reload();
                         }, {type: 'success', confirmButtonText: 'OK'});
+                    } else {
+                        alert("请先登陆", null, function () {
+                            window.location.reload();
+                        }, {type: 'error', confirmButtonText: 'OK'});
                     }
+                },
+                error: function (res) {
+                    alert("请先登陆", null, function () {
+                        window.location.reload();
+                    }, {type: 'error', confirmButtonText: 'OK'});
                 }
             })
         })
