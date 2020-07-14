@@ -8,6 +8,7 @@ import com.fehead.bookstore.dao.mapper.UserMapper;
 import com.fehead.bookstore.service.LoginService;
 import com.fehead.bookstore.service.UserService;
 import com.fehead.bookstore.util.AESUtil;
+import com.fehead.bookstore.util.EmailUtil;
 import com.fehead.bookstore.util.JwtUtil;
 import com.fehead.lang.controller.BaseController;
 import com.fehead.lang.error.BusinessException;
@@ -66,6 +67,9 @@ public class LoginController extends BaseController {
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "账号或密码不能为空");
         }
+        if (!EmailUtil.isEmail(username)) {
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "请输入邮箱");
+        }
         String pass = null;
         try {
             pass = loginService.getPassword(username);
@@ -89,6 +93,9 @@ public class LoginController extends BaseController {
                                      @RequestParam("password") String password) throws BusinessException {
         if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password) || StringUtils.isEmpty(nickname)) {
             throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "账号或密码不能为空");
+        }
+        if (!EmailUtil.isEmail(email)) {
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "请输入邮箱");
         }
         userMapper.insert(new UserDO(email, nickname));
         passwordMapper.insert(new PasswordDO(email, AESUtil.encrypt(password, email)));

@@ -19,8 +19,6 @@ import javax.annotation.Resource;
 @NoArgsConstructor
 public class UserDO {
 
-
-
     @TableId(type = IdType.INPUT)
     private String email;
     private String nickname;

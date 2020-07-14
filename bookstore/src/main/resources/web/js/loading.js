@@ -283,6 +283,7 @@ $(function() {
     }
 
     function login() {
+        sub();
         if (userToken != null) {
             $.ajax({
                 url: LOGIN_URL + "/token",
@@ -326,58 +327,71 @@ $(function() {
                 "                        </div>" +
                 "                        <button class=\"btn btn-default submit\"><i class=\"fa fa-arrow-right\"></i></button>\n"
             );
-            
+            sub();
+
         });
         
-        $(".form-horizontal .submit").click(function () {
-            console.log("123");
-            var heading = $(".form-horizontal .heading").text();
-            heading = heading.toString();
-            console.log(heading);
-            var url = LOGIN_URL;
-            var email = null;
-            var password = null;
-            var nickname = null;
-            if (heading === "登  录") {
-                email = $("#email").val();
-                password = $("#password").val();
-                url += "/login";
-            } else if (heading === "注  册") {
-                console.log("2");
-                url += "/register";
+        function sub() {
+            $(".form-horizontal .submit").click(function () {
+                console.log("123");
+                var heading = $(".form-horizontal .heading").text();
+                heading = heading.toString();
+                console.log(heading);
+                var url = LOGIN_URL;
+                var email = null;
+                var password = null;
+                var nickname = null;
+                if (heading === "登  录") {
+                    email = $("#email").val();
+                    password = $("#password").val();
+                    url += "/login";
+                } else if (heading === "注  册") {
+                    console.log("2");
+                    url += "/register";
+                    email = $("#email").val();
+                    nickname = $("#nickname").val();
+                    password = $("#password").val();
+                    console.log("email:" + email);
+                    console.log("nickname:" + nickname);
+                    console.log("password:" + password);
+                } else {return;}
+
                 console.log("email:" + email);
                 console.log("nickname:" + nickname);
                 console.log("password:" + password);
-            } else {return;}
-
-            console.log("email:" + email);
-            console.log("nickname:" + nickname);
-            console.log("password:" + password);
-            $.ajax({
-                url: url,
-                type: "POST",
-                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-                data: {
-                    "email": email,
-                    "nickname": nickname,
-                    "password": password
-                },
-                success: function (res) {
-                    if (res.status == "success") {
-                        userToken = res.data;
-                        $.session.set('token', res.data);
-                        console.log(userToken);
-                        alert("登录成功！", null, function () {
-                            $('.popupLogin').popup().close();
-                            window.location.reload();
-                        }, {type: 'success', confirmButtonText: 'OK'});
-                    } else {
-                        alert(res.data.errorMsg, null, function () {
-                        }, {type: 'error', confirmButtonText: 'OK'});
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                    data: {
+                        "email": email,
+                        "nickname": nickname,
+                        "password": password
+                    },
+                    success: function (res) {
+                        if (res.status == "success") {
+                            userToken = res.data;
+                            $.session.set('token', res.data);
+                            console.log(userToken);
+                            if (nickname == null) {
+                                alert("登录成功！", null, function () {
+                                    $('.popupLogin').popup().close();
+                                    window.location.reload();
+                                }, {type: 'success', confirmButtonText: 'OK'});
+                            } else {
+                                alert("注册成功！", null, function () {
+                                    $('.popupLogin').popup().close();
+                                    window.location.reload();
+                                }, {type: 'success', confirmButtonText: 'OK'});
+                            }
+                        } else {
+                            alert(res.data.errorMsg, null, function () {
+                            }, {type: 'error', confirmButtonText: 'OK'});
+                        }
                     }
-                }
+                })
             })
-        })
+        }
 
         $(".user_nickname").click(function () {
             $.session.remove("token");
